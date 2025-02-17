@@ -1,3 +1,15 @@
+export interface AssetInfo {
+  id: number;
+  name: string;
+  unitName: string;
+  total: number;
+  decimals: number;
+  frozen: boolean;
+  url?: string;
+  amount: number;
+  lastTransaction?: string;
+}
+
 export interface AccountInfo {
   address: string;
   amount: number;
@@ -9,6 +21,7 @@ export interface AccountInfo {
   };
   'created-apps': any[];
   'created-assets': any[];
+  assets: AssetInfo[];
   'min-balance': number;
   'pending-rewards': number;
   'reward-base': number;
@@ -26,4 +39,11 @@ export interface WatchedAccount {
   info: AccountInfo | null;
   lastUpdated: number;
   error?: string;
+}
+
+export interface AccountStateChange {
+  address: string;
+  oldBalance: number;
+  newBalance: number;
+  timestamp: number;
 }

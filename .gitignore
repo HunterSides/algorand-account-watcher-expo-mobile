@@ -32,5 +32,3 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
-
-.bolt
